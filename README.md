@@ -88,3 +88,12 @@ $ sudo apt-get update
 $ sudo apt-get install -y macbuntu-os-ithemes-v1804
 $ sudo apt-get install -y macbuntu-os-icons-v1804
 ```
+
+* theme
+from [here]( "link")
+
+* icon
+from [here](https://www.gnome-look.org/p/1210856/ "link")
+
+* cursor
+from [here]( "link")
