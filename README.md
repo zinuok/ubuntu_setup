@@ -10,7 +10,7 @@ from: [nouveau](https://blog.neonkid.xyz/66 "link")
 ```
 $ sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
 ```
-### * save the file after writing these: *df
+### * save the file after writing these:
 ```
 blacklist nouveau
 blacklist lbm-nouveau
