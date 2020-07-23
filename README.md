@@ -1,7 +1,8 @@
 # ubuntu_setup
 
 ### graphic driver problem (nouveau)
-start:
-    ddd
+start
+    dd
     dkjfk
-ss
+    
+dd
