@@ -60,9 +60,5 @@ $ ./ubuntu_sim_ros_melodic_update.sh
 ```
 
 ## 4. QgroundControl install
-from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")  
-download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
-```
-$ chmod +x qgc_install.sh
-$ ./qgc_install.sh
+download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.dmg "link")
 ```
