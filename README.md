@@ -27,7 +27,7 @@ $ echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 $ sudo update-initramfs -u
 $ sudo reboot
 ```
-### * NVIDIA driver install
+### * @NVIDIA driver install
 from: [nvidia_install](https://codechacha.com/ko/install-nvidia-driver-ubuntu/ "link")
 * find recommended driver for your PC
 ```
