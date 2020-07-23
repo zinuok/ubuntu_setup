@@ -39,10 +39,8 @@ $ sudo add-apt-repository ppa:graphics-drivers/ppa
 $ sudo apt update
 $ sudo apt install nvidia-driver-[driver#]
 $ sudo reboot
-```
-  
-  
-  
+```  
+#
 ## 2. etc install (chrome browser, terminator, vscode)
 download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
 ```
