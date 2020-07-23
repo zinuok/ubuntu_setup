@@ -18,3 +18,9 @@ options nouveau modeset=0
 alias nouveau off
 alias lbm-nouveau off
 ```
+set nouveau options to 0
+```
+sudo apt install dkms build-essential linux-header-generic
+echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+update-initramfs -u
+```
