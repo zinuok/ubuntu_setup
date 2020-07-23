@@ -1,7 +1,7 @@
 # ubuntu_setup
 
 ## graphic driver problem (nouveau)
-if your computer has nvidia graphic card and driver, you may have a problem with nouveau (ex: not booted up)
+if your computer has nvidia graphic card and driver, you may have a problem with nouveau (ex: not booted up)  
 so you have to turn off nouveau. 
 from: [nouveau](https://blog.neonkid.xyz/66 "link")
 
