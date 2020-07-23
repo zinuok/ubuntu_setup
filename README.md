@@ -136,5 +136,10 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
     sudo cp -r [file name] ~/.themes
     ```
     * apply in plank preferences
+    
+  * remove original dock
+  ```
+  $ sudo apt remove gnome-shell-extension-ubuntu-dock
+  ```
 
 * terminal
