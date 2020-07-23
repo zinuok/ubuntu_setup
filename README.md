@@ -94,11 +94,18 @@ from [here](https://www.pling.com/p/1275087 "link")
 
 * icon
   * download from [here](https://www.gnome-look.org/p/1210856/ "link")
-  * unzip
+  * unzip and copy
   ```
-  tar -xf [fime name]
+  $ tar -xf [fime name]
+  $ mkdir ~/.themes
+  $ sudo cp [file name] ~/.themes
   ```
   * apply
+   open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
 
 * cursor
 from [here]( "link")
+
+* dock
+
+* terminal
