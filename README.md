@@ -129,6 +129,8 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   sudo add-apt-repository ppa:noobslab/macbuntu && sudo apt update
   sudo apt-get install -y macbuntu-os-plank-theme-lts-v7
   ```
+  * add to startup app  
+  tweaks --> Startup Applications --> +
   * plank mac theme install
     * download from [here](https://www.gnome-look.org/p/1264834/ "link")
     * copy
