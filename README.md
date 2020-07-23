@@ -140,6 +140,7 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   * remove original dock
   ```
   $ sudo apt remove gnome-shell-extension-ubuntu-dock
+  $ reboot
   ```
 
 * terminal
