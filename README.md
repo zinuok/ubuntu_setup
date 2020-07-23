@@ -1,6 +1,6 @@
 # ubuntu_setup
 
-## graphic driver problem (nouveau)
+## 1. graphic driver problem (nouveau)
 if your computer has nvidia graphic card and driver, you may have a problem with nouveau (ex: not booted up)  
 so you have to turn off nouveau. 
 from: [nouveau_off](https://blog.neonkid.xyz/66 "link")
@@ -40,6 +40,11 @@ $ sudo apt update
 $ sudo apt install nvidia-driver-[driver#]
 $ sudo reboot
 ```
-## install etc (terminator, vscode)
-
+## 2. install etc (terminator, vscode)
+download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
+```
+$ git clone
+$ chmod +x install_etc.sh
+$ ./install_etc.sh
+```
 
