@@ -7,6 +7,6 @@ from: [nouveau](https://blog.neonkid.xyz/66 "link")
 
 * at GNU grub, type 'e' and append 'nouveau.modeset=0' to turn off the nouveau temporarily
 * make file
-'''
-ddd
-'''
+```
+code
+```
