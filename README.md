@@ -102,7 +102,7 @@ from [here](https://www.pling.com/p/1275087 "link")
   $ sudo cp [file name] ~/.themes
   ```
   * apply  
-   open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
+    open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
 
 * cursor
 from [here]( "link")
