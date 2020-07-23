@@ -60,6 +60,14 @@ $ ./ubuntu_sim_ros_melodic_update.sh
 ```
 
 ## 4. QgroundControl install
-download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.dmg "link")
+from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")
+```
+$ sudo usermod -a -G dialout $USER
+$ sudo apt-get remove modemmanager -y
+$ sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.AppImage "link")
+$ chmod +x ./QGroundControl.AppImage
+$ ./QGroundControl.AppImage  (or double click)
+```
 
 ## 5. Mac OS Theme install
