@@ -61,4 +61,5 @@ $ ./ubuntu_sim_ros_melodic_update.sh
 
 ## 4. QgroundControl install
 download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.dmg "link")
-```
+
+## 5. Mac OS Theme install
