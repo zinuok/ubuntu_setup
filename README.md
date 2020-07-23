@@ -8,5 +8,13 @@ from: [nouveau](https://blog.neonkid.xyz/66 "link")
 * at GNU grub, type 'e' and append 'nouveau.modeset=0' to turn off the nouveau temporarily
 * make file
 ```
-code
+$ sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+```
+and save after writing these:
+```
+blacklist nouveau
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
 ```
