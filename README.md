@@ -77,4 +77,4 @@ $ chmod +x ./QGroundControl.AppImage
 $ ./QGroundControl.AppImage  (or double click)
 ```
 ## 5. Mac OS Theme install
-
+from [here](https://itlearningcenter.tistory.com/entry/%E3%80%901804-LTS%E3%80%91%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%8C%EB%A7%88-%EA%BE%B8%EB%AF%B8%EA%B8%B0 "link")
