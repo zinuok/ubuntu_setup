@@ -20,9 +20,9 @@ alias lbm-nouveau off
 ```
 ### set nouveau options to 0
 ```
-$ sudo apt install dkms
-$ sudo apt install build-essential
-$ sudo apt install linux-header-generic
+$ sudo apt install -y dkms
+$ sudo apt install -y build-essential
+$ sudo apt install -y linux-header-generic
 $ echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 $ sudo update-initramfs -u
 $ sudo reboot
