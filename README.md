@@ -40,4 +40,6 @@ $ sudo apt update
 $ sudo apt install nvidia-driver-[driver#]
 $ sudo reboot
 ```
+## install etc (terminator, vscode)
+
 
