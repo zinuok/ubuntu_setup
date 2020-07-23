@@ -43,7 +43,7 @@ $ sudo reboot
   
    
    
-## 2. install etc (chrome browser, terminator, vscode)
+## 2. etc install (chrome browser, terminator, vscode)
 download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
 ```
 $ git clone https://github.com/zinuok/ubuntu_setup.git
@@ -57,4 +57,12 @@ from: [here](https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts
 ```
 $ chmod +x ubuntu_sim_ros_melodic_update.sh
 $ ./ubuntu_sim_ros_melodic_update.sh
+```
+
+## 4. QgroundControl install
+from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")  
+download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
+```
+$ chmod +x qgc_install.sh
+$ ./qgc_install.sh
 ```
