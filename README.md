@@ -65,9 +65,10 @@ from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_ins
 $ sudo usermod -a -G dialout $USER
 $ sudo apt-get remove modemmanager -y
 $ sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+```
 download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.AppImage "link")
+## 5. Mac OS Theme install
+```
 $ chmod +x ./QGroundControl.AppImage
 $ ./QGroundControl.AppImage  (or double click)
 ```
-
-## 5. Mac OS Theme install
