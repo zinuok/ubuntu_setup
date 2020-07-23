@@ -43,7 +43,7 @@ $ sudo reboot
   
    
    
-## 2. install etc (terminator, vscode)
+## 2. install etc (chrome browser, terminator, vscode)
 download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
 ```
 $ git clone https://github.com/zinuok/ubuntu_setup.git
