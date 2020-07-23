@@ -41,10 +41,8 @@ $ sudo apt install nvidia-driver-[driver#]
 $ sudo reboot
 ```
   
-   
-
-
-
+  
+  
 ## 2. etc install (chrome browser, terminator, vscode)
 download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
 ```
@@ -76,5 +74,19 @@ download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QG
 $ chmod +x ./QGroundControl.AppImage
 $ ./QGroundControl.AppImage  (or double click)
 ```
+
+
 ## 5. Mac OS Theme install
 from [here](https://itlearningcenter.tistory.com/entry/%E3%80%901804-LTS%E3%80%91%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%8C%EB%A7%88-%EA%BE%B8%EB%AF%B8%EA%B8%B0 "link")
+
+* Genome tweak install
+```
+$ sudo apt-get install -y gnome-tweak-tool
+```
+* add repository
+```
+$ sudo add-apt-repository ppa:noobslab/macbuntu
+$ sudo apt-get update
+$ sudo apt-get install -y macbuntu-os-ithemes-v1804
+$ sudo apt-get install -y macbuntu-os-icons-v1804
+```
