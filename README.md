@@ -131,5 +131,10 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   ```
   * plank mac theme install
     * download from [here](https://www.gnome-look.org/p/1264834/ "link")
+    * copy
+    ```
+    sudo cp -r [file name] ~/.themes
+    ```
+    * apply in plank preferences
 
 * terminal
