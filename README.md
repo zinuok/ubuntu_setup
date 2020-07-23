@@ -22,7 +22,7 @@ alias lbm-nouveau off
 ```
 $ sudo apt install -y dkms
 $ sudo apt install -y build-essential
-$ sudo apt install -y linux-header-generic
+$ sudo apt install linux-headers-$(uname -r)
 $ echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 $ sudo update-initramfs -u
 $ sudo reboot
