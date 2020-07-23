@@ -1,3 +1,3 @@
 # ubuntu_setup
 
-# graphic driver problem (nouveau)
+### graphic driver problem (nouveau)
