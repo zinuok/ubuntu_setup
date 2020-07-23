@@ -100,29 +100,27 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   $ sudo cp [file name] ~/.themes
   ```
   * apply  
-    open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
+    open gnome-tweak, go to 'Appearance' tab --> Themes --> Applications
     
 * icon
   * download from [here](https://www.gnome-look.org/p/1210856/ "link")
   * unzip and copy
   ```
   $ tar -xf [fime name]
-  $ mkdir ~/.themes
-  $ sudo cp [file name] ~/.themes
+  $ mkdir ~/.icons
+  $ sudo cp [file name] ~/.icons
   ```
   * apply  
-    open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
+    open gnome-tweak, go to 'Appearance' tab --> Themes --> Icons
 
 * cursor
-  * download from [here](https://www.gnome-look.org/p/1210856/ "link")
+  * download from [here](https://www.gnome-look.org/p/1384420/ "link")
   * unzip and copy
   ```
-  $ tar -xf [fime name]
-  $ mkdir ~/.themes
-  $ sudo cp [file name] ~/.themes
+  $ unzip [fime name]
   ```
   * apply  
-    open gnome-tweak, go to 'Appearance' tab --> Themes --> applications
+    open gnome-tweak, go to 'Appearance' tab --> Themes --> Cursor
 
 * dock
 
