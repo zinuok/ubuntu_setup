@@ -28,4 +28,15 @@ $ sudo update-initramfs -u
 $ sudo reboot
 ```
 ### * NVIDIA driver install
-hel
+* find recommended driver for your PC
+```
+$ ubuntu-drivers devices
+```
+* install the driver
+```
+$ sudo add-apt-repository ppa:graphics-drivers/ppa
+$ sudo apt update
+$ sudo apt install nvidia-driver-[driver#]
+$ sudo reboot
+'''
+
