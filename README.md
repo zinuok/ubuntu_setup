@@ -74,7 +74,7 @@ $ ./QGroundControl.AppImage  (or double click)
 ```
 
 
-## 5. Mac OS Theme install
+## 5. 'Mac Mojave' Theme install
 from [here](https://itlearningcenter.tistory.com/entry/%E3%80%901804-LTS%E3%80%91%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%8C%EB%A7%88-%EA%BE%B8%EB%AF%B8%EA%B8%B0 "link")
 
 * Genome tweak install
@@ -90,10 +90,15 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
 ```
 
 * theme
-from [here]( "link")
+from [here](https://www.pling.com/p/1275087 "link")
 
 * icon
-from [here](https://www.gnome-look.org/p/1210856/ "link")
+  * download from [here](https://www.gnome-look.org/p/1210856/ "link")
+  * unzip
+  ```
+  tar -xf [fime name]
+  ```
+  * apply
 
 * cursor
 from [here]( "link")
