@@ -123,5 +123,13 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Cursor
 
 * dock
+  * plank dock install
+  ```
+  sudo apt-get install -y plank
+  sudo add-apt-repository ppa:noobslab/macbuntu && sudo apt update
+  sudo apt-get install -y macbuntu-os-plank-theme-lts-v7
+  ```
+  * plank mac theme install
+    * download from [here](https://www.gnome-look.org/p/1264834/ "link")
 
 * terminal
