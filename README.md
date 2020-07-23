@@ -53,7 +53,7 @@ $ ./install_etc.sh
 
 ## 3. ROS Melodic & mavros/gazebo9 install
 from: [here](https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts/ubuntu_sim_ros_melodic.sh "link")  
-note: this is for Ubuntu 18.04 LTS
+(this is for Ubuntu 18.04 LTS)
 ```
 $ chmod +x ubuntu_sim_ros_melodic_update.sh
 $ ./ubuntu_sim_ros_melodic_update.sh
