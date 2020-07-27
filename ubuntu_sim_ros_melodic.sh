@@ -112,7 +112,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
 git submodule update --init --recursive
-sudo apt-get install python-jinja2
+sudo apt-get install -y python-jinja2
 
 # make Firmware (do not build Firmware by catkin build. it cauese uORB error)
 cd ~/catkin_ws/src/Firmware
