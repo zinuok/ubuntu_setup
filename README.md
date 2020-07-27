@@ -50,7 +50,20 @@ $ chmod +x install_etc.sh
 $ ./install_etc.sh
 ```
 
-## 3. ROS Melodic & mavros/gazebo9 install
+## 3. Hangul install
+* Settings -> Region&Language -> Manage Installed Languages -> Install/Remove Language...
+then you can see 'Korean'
+* reboot
+* open the terminal
+```
+$ ibus-setup
+```
+* add Hangul in ibus-setup: Input Method -> Add -> ... -> Korean -> Hangul
+* add Hangul input source: Settings -> Region&Language -> Add an Input Source 
+* click 'gear' button
+* add transition key input and check 'Start in Hangul mode'
+
+## 4. ROS Melodic & mavros/gazebo9 install
 from: [here](https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts/ubuntu_sim_ros_melodic.sh "link")  
 (this is for Ubuntu 18.04 LTS)
 ```
@@ -58,7 +71,7 @@ $ chmod +x ubuntu_sim_ros_melodic_update.sh
 $ ./ubuntu_sim_ros_melodic_update.sh
 ```
 
-## 4. QgroundControl install
+## 5. QgroundControl install
 from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")
 * install plugin
 ```
@@ -75,7 +88,7 @@ $ ./QGroundControl.AppImage  (or double click)
 ```
 
 
-## 5. 'Mac Mojave' Theme install
+## 6. 'Mac Mojave' Theme install
 from [here](https://itlearningcenter.tistory.com/entry/%E3%80%901804-LTS%E3%80%91%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%8C%EB%A7%88-%EA%BE%B8%EB%AF%B8%EA%B8%B0 "link")
 
 * Genome tweak install
