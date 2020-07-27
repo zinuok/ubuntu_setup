@@ -63,12 +63,12 @@ $ ibus-setup
 * click 'gear' button
 * add transition key input and check 'Start in Hangul mode'
 
-## 4. ROS Melodic & mavros/gazebo9 install
-from: [here](https://dev.px4.io/v1.9.0/en/setup/dev_env_linux_ubuntu.html#snapdragon-flight "link")  
-(this is for Ubuntu 18.04 LTS)
+## 4. ROS Melodic & mavros/gazebo9 install (for Ubuntu 18.04 LTS)
+modified from: [here](https://dev.px4.io/v1.9.0/en/setup/dev_env_linux_ubuntu.html#snapdragon-flight "link")  
+(this scripts includes px4 Firmware installation)
 ```
-$ chmod +x ubuntu_sim_ros_melodic_update.sh
-$ ./ubuntu_sim_ros_melodic_update.sh
+$ sudo usermod -a -G dialout $USER
+$ source ubuntu_sim_ros_melodic.sh
 ```
 
 ## 5. QgroundControl install
