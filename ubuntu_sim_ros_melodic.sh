@@ -112,13 +112,19 @@ cd ~/catkin_ws/src
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
 git submodule update --init --recursive
-sudo apt-get install -y python-jinja2
+sudo apt install -y python3-pip
+pip3 install --user empy jinja2 toml numpy 
 
 # make Firmware (do not build Firmware by catkin build. it cauese uORB error)
+sudo apt-get install -y libgstreamer-plugins-base1.0-dev
 cd ~/catkin_ws/src/Firmware
-make posix_sitl_default gazebo
+DONT_RUN=1 make px4_sitl_default gazebo
+source ~/catkin_ws/devel/setup.bash    # (optional)
+source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
 
 # to execute gazebo iris simulation using mavros,
-# 2. $ cd ~/catkin_ws/src/Firmware && no_sim=1 make px4_sitl_default gazebo
-# 1. $ roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+# 1. $ cd ~/catkin_ws/src/Firmware && no_sim=1 make px4_sitl_default gazebo
+# 2. $ roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 # 3. $ source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default && roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world
