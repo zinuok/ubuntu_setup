@@ -1,5 +1,5 @@
 # ubuntu_setup
-
+wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_melodic.sh
 ## 1. graphic driver problem (nouveau)
 if your computer has nvidia graphic card and driver, you may have a problem with nouveau (ex: not booted up)  
 so you have to turn off nouveau. 
