@@ -117,3 +117,8 @@ sudo apt-get install -y python-jinja2
 # make Firmware (do not build Firmware by catkin build. it cauese uORB error)
 cd ~/catkin_ws/src/Firmware
 make posix_sitl_default gazebo
+
+# to execute gazebo iris simulation using mavros,
+# 2. $ cd ~/catkin_ws/src/Firmware && no_sim=1 make px4_sitl_default gazebo
+# 1. $ roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+# 3. $ source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default && roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world
