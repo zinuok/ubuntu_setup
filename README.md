@@ -68,6 +68,7 @@ $ ibus-setup
 from [here](https://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html)  
 (this scripts includes px4 Firmware installation)
 ```
+$ wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 $ bash ubuntu_sim_ros_melodic.sh
 ```
 
