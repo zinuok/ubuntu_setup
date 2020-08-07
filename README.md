@@ -1,5 +1,6 @@
 # ubuntu_setup
 wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_melodic.sh
+wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 ## 1. graphic driver problem (nouveau)
 if your computer has nvidia graphic card and driver, you may have a problem with nouveau (ex: not booted up)  
 so you have to turn off nouveau. 
@@ -64,11 +65,10 @@ $ ibus-setup
 * add transition key input and check 'Start in Hangul mode'
 
 ## 4. ROS Melodic & mavros/gazebo9 install (for Ubuntu 18.04 LTS)
-modified from: [here](https://dev.px4.io/v1.9.0/en/setup/dev_env_linux_ubuntu.html#snapdragon-flight "link")  
+from [here](https://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html)  
 (this scripts includes px4 Firmware installation)
 ```
-$ sudo usermod -a -G dialout $USER
-$ source ubuntu_sim_ros_melodic.sh
+$ bash ubuntu_sim_ros_melodic.sh
 ```
 
 ## 5. QgroundControl install
