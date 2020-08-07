@@ -68,12 +68,11 @@ $ ibus-setup
 from [here](https://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html)  
 (this scripts includes px4 Firmware installation)
 ```
-$ pip install -U future
-$ sudo apt-get install -y libgeographic-dev ros-melodic-geographic-msgs
-$ wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
+$ cd ~/ubuntu_setup/
+$ chmod +x ubuntu_sim_ros_melodic.sh
 $ bash ubuntu_sim_ros_melodic.sh
 ```
-
+git
 ## 5. QgroundControl install
 from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")
 * install plugin
