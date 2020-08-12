@@ -50,6 +50,10 @@ $ git clone https://github.com/zinuok/ubuntu_setup.git
 $ chmod +x install_etc.sh
 $ ./install_etc.sh
 ```
+To solve time conflicting problem between Window and Linux,
+```
+$ timedatectl set-local-rtc 1 --adjust-system-clock
+```
 
 ## 3. Hangul install
 * Settings -> Region&Language -> Manage Installed Languages -> Install/Remove Language...
