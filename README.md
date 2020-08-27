@@ -82,9 +82,9 @@ add followings into '~/.bashrc'
 ```
 alias cf='cd ~/catkin_ws/src/Firmware'
 alias sr='source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default'
-alias sim1='cf && no_sim=1 make px4_sitl_default gazebo'
+alias sim1='cf && sr && no_sim=1 make px4_sitl_default gazebo'
 alias sim2='roslaunch mavros px4.launch'
-alias sim3='roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world'
+alias sim3='sr && roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world'
 ```
 
 ## 5. QgroundControl install
