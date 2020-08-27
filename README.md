@@ -78,6 +78,13 @@ $ bash ubuntu_sim_ros_melodic.sh
 ```
 + gazebo simulation with mavros
 from [here](https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html)
+install
+```
+$ sudo apt install -y python3-pip
+$ pip3 install --user jinja2 toml empy pyros-genmsg packaging numpy
+$ sudo apt install -y libgstreamer-plugins-base1.0-dev
+```
+
 add followings into '~/.bashrc'
 ```
 alias cf='cd ~/catkin_ws/src/Firmware'
