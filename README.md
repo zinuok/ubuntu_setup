@@ -90,7 +90,7 @@ $ cd ~/catkin_ws/src/Firmware && git submodule update --init --recursive
 
 add followings into '~/.bashrc'
 ```
-alias cf='cd ~/catkin_ws/src/Firmware && source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default'
+alias cf='cd ~/catkin_ws/src/Firmware && source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default && export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) && export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo'
 
 alias sim1='cf && no_sim=1 make px4_sitl_default gazebo'
 alias sim2='cf && roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"'
