@@ -83,15 +83,18 @@ install
 $ sudo apt install -y python3-pip
 $ pip3 install --user jinja2 toml empy pyros-genmsg packaging numpy
 $ sudo apt install -y libgstreamer-plugins-base1.0-dev
+
+$ cd ~/catkin_ws/src &$ git clone https://github.com/PX4/Firmware.git
+$ cd ~/catkin_ws/src/Firmware && git submodule update --init --recursive
 ```
 
 add followings into '~/.bashrc'
 ```
-alias cf='cd ~/catkin_ws/src/Firmware'
-alias sr='source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default'
-alias sim1='cf && sr && no_sim=1 make px4_sitl_default gazebo'
-alias sim2='roslaunch mavros px4.launch'
-alias sim3='sr && roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world'
+alias cf='cd ~/catkin_ws/src/Firmware && source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default'
+
+alias sim1='cf && no_sim=1 make px4_sitl_default gazebo'
+alias sim2='cf && roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"'
+alias sim3='cf && roslaunch gazebo_ros empty_world.launch world_name:=$(pwd)/Tools/sitl_gazebo/worlds/iris.world'
 ```
 
 ## 5. QgroundControl install
