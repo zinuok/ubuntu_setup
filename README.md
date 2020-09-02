@@ -70,28 +70,11 @@ $ ibus-setup
 
 ## 4. ROS Melodic & mavros/gazebo9 install (for Ubuntu 18.04 LTS)
 from [here](https://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html)  
-(Though this scripts includes px4 Firmware installation, the lastest Firmware version may not work. So download from v1.10.0 branch which is verified)
+(Though this scripts includes px4 Firmware installation, the lastest Firmware version may not work. If you use the 'Firmware', therefore, download from v1.10.0 branch which is verified => ref [this](https://github.com/zinuok/gazebo_mavros))
 ```
 $ cd ~/ubuntu_setup/
 $ chmod +x ubuntu_sim_ros_melodic.sh
 $ bash ubuntu_sim_ros_melodic.sh
-```
-+ gazebo simulation with mavros
-from [here](https://dev.px4.io/v1.9.0/en/simulation/ros_interface.html) and [engcang](https://github.com/engcang/mavros-gazebo-application)
-install
-```
-$ git clone 
-$ sudo apt install ros-melodic-gazebo-plugins
-$ sudo apt install -y python3-pip
-$ pip3 install --user jinja2 toml empy pyros-genmsg packaging numpy
-$ sudo apt install -y libgstreamer-plugins-base1.0-dev
-
-$ git clone -b v1.10.0 https://github.com/PX4/Firmware.git --recursive
-```
-
-add followings into '~/.bashrc': we use 'mavros_posix_sitl' launch file in which gazebo simulation and mavros are executed.
-```
-alias sim='cd ~/Firmware && DONT_RUN=1 make px4_sitl_default gazebo && source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default && export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) && export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo && roslaunch px4 mavros_posix_sitl.launch'
 ```
 
 ## 5. QgroundControl install
