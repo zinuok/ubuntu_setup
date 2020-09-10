@@ -116,7 +116,7 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   ```
   $ tar -xf [fime name]
   $ mkdir ~/.themes
-  $ sudo cp [file name] ~/.themes
+  $ sudo cp -r [file name] ~/.themes
   ```
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Applications
@@ -127,7 +127,7 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   ```
   $ tar -xf [fime name]
   $ mkdir ~/.icons
-  $ sudo cp [file name] ~/.icons
+  $ sudo cp -r [file name] ~/.icons
   ```
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Icons
@@ -154,9 +154,10 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
     * download from [here](https://www.gnome-look.org/p/1264834/ "link")
     * copy
     ```
-    sudo cp -r [file name] ~/.themes
+    sudo cp -r [file name] /usr/share/plank/themes/
     ```
     * apply in plank preferences
+    * plank settings (Ctrl + right click) --> Behaviour --> Dodge maximized window
     
   * remove original dock
   ```
