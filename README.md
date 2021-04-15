@@ -112,6 +112,7 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
 
 * themes
   * download from [here](https://www.pling.com/p/1275087 "link")
+  * my themes: Mojave-dark
   * unzip and copy
   ```
   $ tar -xf [fime name]
@@ -123,6 +124,7 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
     
 * icon
   * download from [here](https://www.gnome-look.org/p/1210856/ "link")
+  * my icon: MacBuntu-OSX (which is already installed)
   * unzip and copy
   ```
   $ tar -xf [fime name]
