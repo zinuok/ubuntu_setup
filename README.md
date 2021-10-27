@@ -76,7 +76,7 @@ $ source ~/.bashrc
 
 * install PyTorch
 ```
-$ pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+$ pip3 install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 # check if PyTorch works normally
 $ python3
@@ -84,6 +84,43 @@ $ python3
   >> torch.rand(10).to('cuda')
 ```
 
+
+### OpenCV install (ver. 3.4)
+refered from [here](https://github.com/engcang/vins-application#-opencv-with-cuda-necessary-for-gpu-version-1)
+* clone OpenCV/conrtib 3.4 from github
+```
+$ git clone -b 3.4 https://github.com/opencv/opencv.git
+$ git clone -b 3.4 https://github.com/opencv/opencv_contrib.git
+```
+
+* install OpenCV with CUDA, contrib
+```
+# CUDA_ARCH_BIN=8.6 for RTX 30XX
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_C_COMPILER=gcc-6 \
+      -D CMAKE_CXX_COMPILER=g++-6 \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D OPENCV_GENERATE_PKGCONFIG=YES \
+      -D WITH_CUDA=ON \
+      -D CUDA_ARCH_BIN=8.6 \
+      -D CUDA_ARCH_PTX="" \
+      -D ENABLE_FAST_MATH=ON \
+      -D CUDA_FAST_MATH=ON \
+      -D WITH_CUBLAS=ON \
+      -D WITH_LIBV4L=ON \
+      -D WITH_GSTREAMER=ON \
+      -D WITH_GSTREAMER_0_10=OFF \
+      -D WITH_QT=ON \
+      -D WITH_OPENGL=ON \
+      -D BUILD_opencv_cudacodec=OFF \
+      -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
+      -D WITH_TBB=ON \
+      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+      ../
+      
+$ time make -j1 # important, use only one core to prevent compile error
+$ sudo make install
+```
   
   
 ## 2. etc install (chrome browser, terminator, vscode)
