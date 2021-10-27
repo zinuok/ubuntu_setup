@@ -45,7 +45,7 @@ $ sudo reboot
 ### CUDA, cuDNN, PyTorch install
 from: [here](https://velog.io/@skyfishbae/RTX3090-2%EB%8C%80-Ubuntu-18.04-%EB%94%A5%EB%9F%AC%EB%8B%9D-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-1-Nvidia-driver-Cuda-cuDNN-%EC%84%A4%EC%B9%98)
 * be careful to clarify the compatibility of [GPU / CUDA / CUDA-cuDNN / Pytorch] version
-* my setup: RTX 3060 Ti / CUDA 11.1 / cuDNN 8.5 / 1.7.0+cu110
+* my setup: RTX 3060 Ti / CUDA 11.1 / cuDNN 8.5 / 1.8.0+cu111
 
 * install CUDA 11.1
 ```
@@ -59,14 +59,29 @@ $ sudo apt-get -y install cuda
 ```
 
 * install CUDA-cuDNN from [Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.1](https://developer.nvidia.com/rdp/cudnn-archive)
+```
+$ tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
+$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+
+# check if 'CUDNN_MAJOR 8' is printed
+$ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+
+# export envrionment variables
+$ echo "export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}" >> ~/.bashrc
+$ echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc
+$ source ~/.bashrc
+```
 
 * install PyTorch
 ```
+$ pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 # check if PyTorch works normally
 $ python3
->> import torch
->> torch.rand(10).to('cuda')
+  >> import torch
+  >> torch.rand(10).to('cuda')
 ```
 
   
