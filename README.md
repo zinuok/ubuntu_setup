@@ -41,6 +41,34 @@ $ sudo apt update
 $ sudo apt install nvidia-driver-[driver#]
 $ sudo reboot
 ```  
+
+### CUDA, cuDNN, PyTorch install
+from: [here](https://velog.io/@skyfishbae/RTX3090-2%EB%8C%80-Ubuntu-18.04-%EB%94%A5%EB%9F%AC%EB%8B%9D-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-1-Nvidia-driver-Cuda-cuDNN-%EC%84%A4%EC%B9%98)
+* be careful to clarify the compatibility of [GPU / CUDA / CUDA-cuDNN / Pytorch] version
+* my setup: RTX 3060 Ti / CUDA 11.1 / cuDNN 8.5 / 1.7.0+cu110
+
+* install CUDA 11.1
+```
+$ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+$ sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+$ wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+$ sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+$ sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
+$ sudo apt-get update
+$ sudo apt-get -y install cuda
+```
+
+* install CUDA-cuDNN from [Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.1](https://developer.nvidia.com/rdp/cudnn-archive)
+
+* install PyTorch
+```
+
+# check if PyTorch works normally
+$ python3
+>> import torch
+>> torch.rand(10).to('cuda')
+```
+
   
   
 ## 2. etc install (chrome browser, terminator, vscode)
