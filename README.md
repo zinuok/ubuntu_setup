@@ -58,6 +58,13 @@ $ sudo apt-get update
 $ sudo apt-get -y install cuda
 ```
 
+* If you have a problem kinds of "cuda : Depends: cuda-10-0 (>= 10.0.130)", (from [here](https://askubuntu.com/a/1281139))
+```
+wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+chmod +x cuda_11.1.0_455.23.05_linux.run 
+sudo ./cuda_11.1.0_455.23.05_linux.run 
+```
+
 * install CUDA-cuDNN from [Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.1](https://developer.nvidia.com/rdp/cudnn-archive)
 ```
 $ tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
