@@ -8,11 +8,11 @@ from: [here](https://blog.neonkid.xyz/66 "link")
 
 ### at GNU grub, type 'e' and append 'nouveau.modeset=0' to turn off the nouveau temporarily
 ### make file
-```
-$ sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+```bash
+sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
 ```
 ### save the file after writing these:
-```
+```bash
 blacklist nouveau
 blacklist lbm-nouveau
 options nouveau modeset=0
@@ -20,26 +20,26 @@ alias nouveau off
 alias lbm-nouveau off
 ```
 ### set nouveau options to 0
-```
-$ sudo apt install -y dkms
-$ sudo apt install -y build-essential
-$ sudo apt install linux-headers-$(uname -r)
-$ echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
-$ sudo update-initramfs -u
-$ sudo reboot
+```bash
+sudo apt install -y dkms
+sudo apt install -y build-essential
+sudo apt install linux-headers-$(uname -r)
+echo options nouveua modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+sudo update-initramfs -u
+sudo reboot
 ```
 ### NVIDIA driver install
 from: [here](https://codechacha.com/ko/install-nvidia-driver-ubuntu/ "link")
 * find recommended driver for your PC
-```
-$ ubuntu-drivers devices
+```bash
+ubuntu-drivers devices
 ```
 * install the driver
-```
-$ sudo add-apt-repository ppa:graphics-drivers/ppa
-$ sudo apt update
-$ sudo apt install nvidia-driver-[driver#]
-$ sudo reboot
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install nvidia-driver-[driver#]
+sudo reboot
 ```  
 
 ### CUDA, cuDNN, PyTorch install
@@ -48,45 +48,45 @@ from: [here](https://velog.io/@skyfishbae/RTX3090-2%EB%8C%80-Ubuntu-18.04-%EB%94
 * my setup: RTX 3060 Ti / CUDA 11.1 / cuDNN 8.5 / 1.8.0+cu111
 
 * install CUDA 11.1
-```
-$ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
-$ sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
-$ wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
-$ sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
-$ sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
-$ sudo apt-get update
-$ sudo apt-get -y install cuda
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.0-455.23.05-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
 ```
 
 * If you have a problem kinds of "cuda : Depends: cuda-10-0 (>= 10.0.130)", (from [here](https://askubuntu.com/a/1281139))
-```
+```bash
 wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
 chmod +x cuda_11.1.0_455.23.05_linux.run 
 sudo ./cuda_11.1.0_455.23.05_linux.run 
 ```
 
 * install CUDA-cuDNN from [Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.1](https://developer.nvidia.com/rdp/cudnn-archive)
-```
-$ tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
-$ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
-$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
-$ sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+```bash
+tar -xzvf cudnn-11.1-linux-x64-v8.0.5.39.tgz
+sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 
 # check if 'CUDNN_MAJOR 8' is printed
-$ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 # export envrionment variables
-$ echo "export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}" >> ~/.bashrc
-$ echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc
-$ source ~/.bashrc
+echo "export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 * install PyTorch
-```
-$ pip3 install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```bash
+pip3 install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 # check if PyTorch works normally
-$ python3
+python3
   >> import torch
   >> torch.rand(10).to('cuda')
 ```
@@ -95,15 +95,15 @@ $ python3
 ### OpenCV install (ver. 3.4)
 refered from [here](https://github.com/engcang/vins-application#-opencv-with-cuda-necessary-for-gpu-version-1)
 * clone OpenCV/conrtib 3.4 from github
-```
-$ git clone -b 3.4 https://github.com/opencv/opencv.git
-$ git clone -b 3.4 https://github.com/opencv/opencv_contrib.git
+```bash
+git clone -b 3.4 https://github.com/opencv/opencv.git
+git clone -b 3.4 https://github.com/opencv/opencv_contrib.git
 ```
 
 * install OpenCV with CUDA, contrib
-```
+```bash
 # CUDA_ARCH_BIN=8.6 for RTX 30XX
-$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_C_COMPILER=gcc-6 \
       -D CMAKE_CXX_COMPILER=g++-6 \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
@@ -125,21 +125,21 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       ../
       
-$ time make -j1 # important, use only one core to prevent compile error
-$ sudo make install
+time make -j1 # important, use only one core to prevent compile error
+sudo make install
 ```
   
   
 ## 2. etc install (chrome browser, terminator, vscode)
 download and run my shell script [install_etc.sh](https://github.com/zinuok/ubuntu_setup/blob/master/install_etc.sh "link")
-```
-$ git clone https://github.com/zinuok/ubuntu_setup.git
-$ chmod +x install_etc.sh
-$ ./install_etc.sh
+```bash
+git clone https://github.com/zinuok/ubuntu_setup.git
+chmod +x install_etc.sh
+./install_etc.sh
 ```
 To solve time conflicting problem between Window and Linux,
-```
-$ timedatectl set-local-rtc 1 --adjust-system-clock
+```bash
+timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
 ## 3. Hangul install
@@ -147,8 +147,8 @@ $ timedatectl set-local-rtc 1 --adjust-system-clock
 then you can see 'Korean'
 * reboot
 * open the terminal
-```
-$ ibus-setup
+```bash
+ibus-setup
 ```
 * add Hangul in ibus-setup: Input Method -> Add -> ... -> Korean -> Hangul
 * add Hangul input source: Settings -> Region&Language -> Add an Input Source 
@@ -158,26 +158,26 @@ $ ibus-setup
 ## 4. ROS Melodic & mavros/gazebo9 install (for Ubuntu 18.04 LTS)
 from [here](https://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html)  
 (Though this scripts includes px4 Firmware installation, the lastest Firmware version may not work. If you use the 'Firmware', therefore, download from v1.10.0 branch which is verified => ref [this](https://github.com/zinuok/gazebo_mavros))
-```
-$ cd ~/ubuntu_setup/
-$ chmod +x ubuntu_sim_ros_melodic.sh
-$ bash ubuntu_sim_ros_melodic.sh
+```bash
+cd ~/ubuntu_setup/
+chmod +x ubuntu_sim_ros_melodic.sh
+bash ubuntu_sim_ros_melodic.sh
 ```
 
 ## 5. QgroundControl install
 from: [here](https://docs.qgroundcontrol.com/en/getting_started/download_and_install.html "link")
 * install plugin
-```
-$ sudo usermod -a -G dialout $USER
-$ sudo apt-get remove modemmanager -y
-$ sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+```bash
+sudo usermod -a -G dialout $USER
+sudo apt-get remove modemmanager -y
+sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
 ```
 * download image file
 download from [here](https://s3-us-west-2.amazonaws.com/qgroundcontrol/latest/QGroundControl.AppImage "link")
 * execute
-```
-$ chmod +x ./QGroundControl.AppImage
-$ ./QGroundControl.AppImage  (or double click)
+```bash
+chmod +x ./QGroundControl.AppImage
+./QGroundControl.AppImage  (or double click)
 ```
 
 
@@ -185,15 +185,15 @@ $ ./QGroundControl.AppImage  (or double click)
 from [here](https://itlearningcenter.tistory.com/entry/%E3%80%901804-LTS%E3%80%91%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%8C%EB%A7%88-%EA%BE%B8%EB%AF%B8%EA%B8%B0 "link")
 
 * Genome tweak install
-```
-$ sudo apt-get install -y gnome-tweak-tool
+```bash
+sudo apt-get install -y gnome-tweak-tool
 ```
 * add repository
-```
-$ sudo add-apt-repository ppa:noobslab/macbuntu
-$ sudo apt-get update
-$ sudo apt-get install -y macbuntu-os-ithemes-v1804
-$ sudo apt-get install -y macbuntu-os-icons-v1804
+```bash
+sudo add-apt-repository ppa:noobslab/macbuntu
+sudo apt-get update
+sudo apt-get install -y macbuntu-os-ithemes-v1804
+sudo apt-get install -y macbuntu-os-icons-v1804
 ```
 
 
@@ -201,10 +201,10 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   * download from [here](https://www.pling.com/p/1275087 "link")
   * my themes: Mojave-dark
   * unzip and copy
-  ```
-  $ tar -xf [fime name]
-  $ mkdir ~/.themes
-  $ sudo cp -r [file name] ~/.themes
+  ```bash
+  tar -xf [fime name]
+  mkdir ~/.themes
+  sudo cp -r [file name] ~/.themes
   ```
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Applications
@@ -213,10 +213,10 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   * download from [here](https://www.gnome-look.org/p/1210856/ "link")
   * my icon: MacBuntu-OSX (which is already installed)
   * unzip and copy
-  ```
-  $ tar -xf [fime name]
-  $ mkdir ~/.icons
-  $ sudo cp -r [file name] ~/.icons
+  ```bash
+  tar -xf [fime name]
+  mkdir ~/.icons
+  sudo cp -r [file name] ~/.icons
   ```
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Icons
@@ -224,15 +224,15 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
 * cursor
   * download from [here](https://www.gnome-look.org/p/1384420/ "link")
   * unzip and copy
-  ```
-  $ unzip [fime name]
+  ```bash
+  unzip [fime name]
   ```
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Cursor
 
 * dock
   * plank dock install
-  ```
+  ```bash
   sudo apt-get install -y plank
   sudo add-apt-repository ppa:noobslab/macbuntu && sudo apt update
   sudo apt-get install -y macbuntu-os-plank-theme-lts-v7
@@ -242,16 +242,16 @@ $ sudo apt-get install -y macbuntu-os-icons-v1804
   * plank mac theme install
     * download from [here](https://www.gnome-look.org/p/1264834/ "link")
     * copy
-    ```
+    ```bash
     sudo cp -r [file name] /usr/share/plank/themes/
     ```
     * apply in plank preferences
     * plank settings (Ctrl + right click) --> Behaviour --> Dodge maximized window
     
   * remove original dock
-  ```
-  $ sudo apt remove gnome-shell-extension-ubuntu-dock
-  $ reboot
+  ```bash
+  sudo apt remove gnome-shell-extension-ubuntu-dock
+  reboot
   ```
 
 * terminal

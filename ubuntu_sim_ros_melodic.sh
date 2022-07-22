@@ -106,3 +106,33 @@ catkin_ws_source="source ~/catkin_ws/devel/setup.bash"
 if grep -Fxq "$catkin_ws_source" ~/.bashrc; then echo ROS catkin_ws setup.bash already in .bashrc;
 else echo "$catkin_ws_source" >> ~/.bashrc; fi
 eval $catkin_ws_source
+
+
+
+cd ~
+mkdir backend && cd backend
+
+## build Eigen
+wget -O eigen-3.3.9.zip https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip 
+unzip eigen-3.3.9.zip
+cd ~/eigen-3.3.9 && mkdir build && cd build
+cmake ../ && sudo make install
+
+## Ceres
+sudo apt-get install -y cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev
+wget http://ceres-solver.org/ceres-solver-1.14.0.tar.gz
+tar zxf ceres-solver-1.14.0.tar.gz
+cd ceres-solver-1.14.0
+mkdir build && cd build
+cmake -DEXPORT_BUILD_DIR=ON \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      ../
+make -j $(nproc) # number of cores
+sudo make install -j $(nproc)
+
+
+
+
+
+
+
