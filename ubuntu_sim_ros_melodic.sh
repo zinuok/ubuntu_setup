@@ -134,5 +134,35 @@ sudo make install -j $(nproc)
 
 
 
+# Intel Realsense: ROS
+cd ~/backend
+
+wget https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.53.1.tar.gz
+tar -xvf v2.53.1.tar.gz
+rm v2.53.1.tar.gz
+cd librealsense-2.53.1
+
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install -y git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
+sudo apt-get install -y libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+
+mkdir build && cd build
+cmake ../ -DBUILD_EXAMPLES=true -DFORCE_LIBUVC=true
+sudo make uninstall && make clean && make -j4 && sudo make install
+
+# Intel Realsense: ROS
+sudo apt install -y ros-melodic-ddynamic-reconfigure
+cd ~/catkin_ws/src && git clone -b ros1-legacy https://github.com/IntelRealSense/realsense-ros.git
+cd ~/catkin_ws && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
+catkin build
+
+# for possible error
+cd ~/backend/librealsense-2.53.1
+sudo cp $(pwd)/config/99-realsense-libusb.rules /etc/udev/rules.d/99-realsense-libusb.rules && sudo udevadm control --reload-rules && udevadm trigger
+reboot
+
+
+
+
 
 
