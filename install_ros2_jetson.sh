@@ -31,3 +31,35 @@ source ./install/local_setup.bash
 
 echo "source ~/ros/catkin_ws/install/local_setup.bash" >> ~/.bashrc
 source ~/.bashrc
+
+
+# ROS alias
+echo "" >> ~/.bashrc
+echo "# ROS alias" >> ~/.bashrc
+echo "alias cw='cd ~/ros/catkin_ws'" >> ~/.bashrc
+echo "alias cs='cd ~/ros/catkin_ws/src'" >> ~/.bashrc
+echo "alias cb='colcon build --symlink-install'" >> ~/.bashrc
+echo "alias cc='rm -rf build install log'" >> ~/.bashrc
+echo "alias cwb='cw && cb'" >> ~/.bashrc
+
+
+cd ~
+mkdir backend && cd backend
+
+## build Eigen
+wget -O eigen-3.3.9.zip https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip 
+unzip eigen-3.3.9.zip
+cd ~/eigen-3.3.9 && mkdir build && cd build
+cmake ../ && sudo make install
+
+## Ceres
+sudo apt-get install -y cmake libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev
+wget http://ceres-solver.org/ceres-solver-2.1.0.tar.gz
+tar zxf ceres-solver-2.1.0.tar.gz
+cd ceres-solver-2.1.0
+mkdir build && cd build
+cmake -DEXPORT_BUILD_DIR=ON \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      ../
+make -j $(nproc) # number of cores
+sudo make install -j $(nproc)
