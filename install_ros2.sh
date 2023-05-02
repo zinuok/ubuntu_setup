@@ -48,6 +48,7 @@ echo "alias cs='cd ~/ros/catkin_ws/src'" >> ~/.bashrc
 echo "alias cb='colcon build --symlink-install'" >> ~/.bashrc
 echo "alias cc='rm -rf build install log'" >> ~/.bashrc
 echo "alias cwb='cw && cb'" >> ~/.bashrc
+echo "alias  s='source ./install/setup.bash && source ./install/local_setup.bash'" >> ~/.bashrc
 
 
 cd ~
