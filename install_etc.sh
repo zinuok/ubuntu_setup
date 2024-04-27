@@ -13,7 +13,13 @@ sudo apt install -y terminator
 # install visual studio code
 echo "install vscode start"
 sudo apt install -y curl
-sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-sudo apt install -y code
+
+
+# sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
+# sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+# sudo apt update
+# sudo apt install -y code
+
+# since VScode drops its support for Ubuntu 18.04 from 2024 Feb., need previous stable version 
+wget https://update.code.visualstudio.com/1.85.2/linux-deb-x64/stable
+
