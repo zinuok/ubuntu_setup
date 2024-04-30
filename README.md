@@ -230,6 +230,21 @@ sudo apt-get install -y macbuntu-os-icons-v1804
   * apply  
     open gnome-tweak, go to 'Appearance' tab --> Themes --> Cursor
 
+
+* remove annoying 'Undo' pop-up on Nautilus 
+  * refered from [here](https://askubuntu.com/questions/1242551/how-to-disable-nautilus-popup-on-ubuntu-20-04)
+  ```bash
+  # if you installed your theme with genome twek, 
+  cd .themes
+  cd Mojave-Dark # or navigate to $(YOUR_THE)
+  cd gtk-4.0
+
+  # add the following line
+  #  .app-notification { padding: 0; margin: -80px 0 0 0; opacity: 0;}
+  sudo gedit gtk.css
+  ```
+
+
 * dock
   * plank dock install
   ```bash
