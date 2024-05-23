@@ -100,7 +100,7 @@ git clone -b 3.4 https://github.com/opencv/opencv.git
 git clone -b 3.4 https://github.com/opencv/opencv_contrib.git
 ```
 
-* install OpenCV with CUDA, contrib
+* install OpenCV with CUDA, contrib: Ubuntu 18.04
 ```bash
 # CUDA_ARCH_BIN=8.6 for RTX 30XX
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -127,6 +127,32 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       
 time make -j1 # important, use only one core to prevent compile error
 sudo make install
+```
+
+* install OpenCV with CUDA, contrib: Ubuntu 20.04
+```bash
+# CUDA_ARCH_BIN=8.6 for RTX 30XX
+cmake \
+    -D CMAKE_BUILD_TYPE=RELEASE       
+    -D CMAKE_C_COMPILER=gcc-6 \
+    -D CMAKE_CXX_COMPILER=g++-6 \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_GENERATE_PKGCONFIG=YES \   
+    -D WITH_CUDA=ON \
+    -D CUDA_ARCH_BIN=8.6 \
+    -D CUDA_ARCH_PTX="" \
+    -D ENABLE_FAST_MATH=ON \
+    -D CUDA_FAST_MATH=ON \
+    -D WITH_CUBLAS=ON \
+    -D WITH_LIBV4L=ON \  
+    -D WITH_GSTREAMER=ON \
+    -D WITH_GSTREAMER_0_10=OFF \
+    -D WITH_QT=ON \ 
+    -D WITH_OPENGL=ON \
+    -D BUILD_opencv_cudacodec=OFF \
+    -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
+    -D WITH_TBB=ON \
+    ../
 ```
   
   
