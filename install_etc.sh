@@ -12,14 +12,27 @@ sudo apt install -y terminator
 
 # install visual studio code
 echo "install vscode start"
-sudo apt install -y curl
+sudo apt install -y curl software-properties-common apt-transport-https wget
 
 
-# sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
-# sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-# sudo apt update
-# sudo apt install -y code
+# current ubuntu version
+UbuntuVersion=$(lsb_release -rs)
 
-# since VScode drops its support for Ubuntu 18.04 from 2024 Feb., need previous stable version 
-wget https://update.code.visualstudio.com/1.85.2/linux-deb-x64/stable
+if [[ "$UbuntuVersion" == "18.04" ]]; then
+    echo "Detected Ubuntu 18.04. Installing VSCode for 18.04..."
+    sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+    sudo apt update
+    sudo apt install -y code
+elif [[ "$UbuntuVersion" == "20.04" || "$UbuntuVersion" == "22.04" ]]; then
+    echo "Detected Ubuntu $UbuntuVersion. Installing VSCode for 20.04 and later..."
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    sudo apt update
+    sudo apt install -y code
+else
+    echo "Unsupported Ubuntu version: $UbuntuVersion"
+    exit 1
+fi
+
 
