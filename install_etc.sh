@@ -35,4 +35,13 @@ else
     exit 1
 fi
 
+# install AntiGravity (ref: https://ko.ubunlog.com/Linux%EC%97%90-Antigravity%EB%A5%BC-%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/)
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
+sudo gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | \
+sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
+sudo apt update
+sudo apt install antigravity
+
 
